@@ -7,18 +7,18 @@ cask "focusrite-volume-control@beta" do
 
   url "https://github.com/enum-dot-dev/focusrite-volume-control/releases/download/v#{version}/VolumeControl.dmg"
   name "Volume Control"
-  desc "Control Focusrite Scarlett 4th gen volume with media keys via Focusrite Control 2"
+  desc "Control Scarlett 4th gen volume with media keys via Focusrite Control 2"
   homepage "https://enum.dev/focusrite-volume-control/"
 
   conflicts_with cask: "focusrite-volume-control"
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Volume Control.app"
 
   # Unsigned build: clear quarantine so Gatekeeper doesn't block the app
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Volume Control.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-cr", "{{appdir}}/Volume Control.app"]
   end
 
   zap trash: [
