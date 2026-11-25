@@ -2,8 +2,8 @@
 # and a quarantine postflight for unsigned builds) and pushes it to the tap repository.
 # The same template also renders focusrite-volume-control@beta (render_cask.py --beta).
 cask "focusrite-volume-control@beta" do
-  version "1.6.0-beta.2"
-  sha256 "ee221384ef545ed7a478a0cb174c2bab2e2691462acaeedc6d87cc3875801618"
+  version "1.6.0-beta.3"
+  sha256 "08eb1db7439c705411f8cf3ccf349fe93ef8ab0fc417f696657f008928db2730"
 
   url "https://github.com/enum-dot-dev/focusrite-volume-control/releases/download/v#{version}/VolumeControl.dmg"
   name "Volume Control"
